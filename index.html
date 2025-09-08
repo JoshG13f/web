@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Josh Gordon | Computer Science Graduate & Security Enthusiast</title>
+  <meta name="description" content="Portfolio of Josh Gordon, a computer science graduate from MSU Denver who builds secure, networked applications and tools." />
+  <meta name="author" content="Josh Gordon" />
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:title" content="Josh Gordon | Computer Science Graduate & Security Enthusiast"/>
+  <meta property="og:description" content="Projects, experience, and contact info."/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:url" content="<!-- TODO: your domain -->"/>
+  <meta property="og:image" content="<!-- TODO: social image url (1200x630) -->"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+
+  <!-- Canonical -->
+  <link rel="canonical" href="<!-- TODO: your domain -->"/>
+
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>💻</text></svg>">
+
+  <!-- Tailwind CSS (CDN). For production, swap to a compiled stylesheet. -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#eef2ff', 100: '#e0e7ff', 200: '#c7d2fe', 300: '#a5b4fc', 400: '#818cf8', 500: '#6366f1', 600: '#4f46e5', 700: '#4338ca', 800: '#3730a3', 900: '#312e81'
+            }
+          }
+        }
+      },
+      darkMode: ['class', '[data-theme="dark"]']
+    }
+  </script>
+
+  <style>
+    .typing-caret::after { content: '▍'; animation: blink 1s steps(1) infinite; }
+    @keyframes blink { 50% { opacity: 0; } }
+  </style>
+</head>
+
+<body class="bg-white text-slate-800 antialiased dark:bg-slate-950 dark:text-slate-100" data-theme="light">
+  <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 bg-brand-600 text-white px-3 py-2 rounded">Skip to content</a>
+
+  <!-- Header / Nav -->
+  <header class="sticky top-0 z-40 backdrop-blur supports-[backdrop-filter]:bg-white/60 bg-white/90 dark:bg-slate-950/90 border-b border-slate-200/60 dark:border-slate-800">
+    <div class="mx-auto max-w-6xl px-4">
+      <div class="flex h-16 items-center justify-between">
+        <a href="#" class="font-semibold tracking-tight text-slate-900 dark:text-white">Josh Gordon</a>
+        <nav aria-label="Main" class="hidden gap-6 md:flex">
+          <a href="#projects" class="hover:text-brand-600">Projects</a>
+          <a href="#about" class="hover:text-brand-600">About</a>
+          <a href="#contact" class="hover:text-brand-600">Contact</a>
+          <a href="<!-- TODO: resume url -->" class="inline-flex items-center rounded-lg border px-3 py-1.5 text-sm hover:bg-slate-50 dark:hover:bg-slate-900">Resume</a>
+        </nav>
+        <div class="flex items-center gap-2">
+          <button id="themeToggle" class="rounded-lg border px-2 py-1.5 text-sm hover:bg-slate-50 dark:hover:bg-slate-900" aria-label="Toggle dark mode">🌓</button>
+          <button class="md:hidden rounded-lg border px-2 py-1.5" aria-label="Open menu" onclick="document.getElementById('mobileNav').classList.toggle('hidden')">☰</button>
+        </div>
+      </div>
+      <div id="mobileNav" class="hidden border-t py-3 md:hidden">
+        <nav class="flex flex-col gap-2">
+          <a href="#projects" class="py-1">Projects</a>
+          <a href="#about" class="py-1">About</a>
+          <a href="#contact" class="py-1">Contact</a>
+          <a href="<!-- TODO: resume url -->" class="py-1">Resume</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <main id="main" class="mx-auto max-w-6xl px-4">
+    <!-- Hero -->
+    <section class="py-20 sm:py-28">
+      <div class="grid gap-8 md:grid-cols-2 md:items-center">
+        <div>
+          <p class="text-sm uppercase tracking-widest text-brand-600 font-semibold">MSU Denver Graduate • Available for full-time roles</p>
+          <h1 class="mt-3 text-4xl font-bold leading-tight sm:text-5xl">Hi, I’m <span class="text-brand-600">Josh Gordon</span> 👋</h1>
+          <p class="mt-2 typing-caret" id="typedRole" aria-live="polite">Computer Science Graduate & Security Enthusiast</p>
+          <p class="mt-4 max-w-prose text-slate-600 dark:text-slate-300">I specialize in networking and cybersecurity. My projects showcase work with firewalls, intrusion detection, secure data transfer, and vulnerability analysis.</p>
+          <div class="mt-6 flex flex-wrap gap-3">
+            <a href="#projects" class="inline-flex items-center rounded-lg bg-brand-600 px-5 py-3 font-medium text-white hover:bg-brand-700">View Projects</a>
+            <a href="#contact" class="inline-flex items-center rounded-lg border px-5 py-3 font-medium hover:bg-slate-50 dark:hover:bg-slate-900">Contact Me</a>
+          </div>
+          <ul class="mt-6 flex flex-wrap gap-3 text-sm text-slate-500 dark:text-slate-400" aria-label="Tech stack">
+            <li class="rounded-full border px-3 py-1">Python</li>
+            <li class="rounded-full border px-3 py-1">Networking</li>
+            <li class="rounded-full border px-3 py-1">Security</li>
+            <li class="rounded-full border px-3 py-1">Linux</li>
+            <li class="rounded-full border px-3 py-1">SQL</li>
+            <li class="rounded-full border px-3 py-1">AWS</li>
+          </ul>
+        </div>
+        <div class="relative">
+          <div class="aspect-video w-full overflow-hidden rounded-2xl border bg-gradient-to-br from-brand-100 to-brand-300/60 dark:from-slate-800 dark:to-slate-900 p-2">
+            <div class="flex h-full items-center justify-center text-center">
+              <span class="text-sm text-slate-700 dark:text-slate-300">Add a networking/security project screenshot here</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" class="py-16 border-t border-slate-200/60 dark:border-slate-800">
+      <div class="mb-8 flex items-end justify-between">
+        <h2 class="text-2xl font-bold">Featured Projects</h2>
+        <a href="https://github.com/<!-- your-username -->" class="text-sm hover:text-brand-600">All on GitHub →</a>
+      </div>
+
+      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <!-- CARD 1 -->
+        <article class="group rounded-2xl border p-4 transition hover:shadow-lg dark:border-slate-800">
+          <a href="<!-- TODO: live demo url -->" aria-label="Firewall Project" class="block">
+            <div class="aspect-video overflow-hidden rounded-lg bg-slate-100 dark:bg-slate-900"></div>
+            <h3 class="mt-4 text-lg font-semibold">Custom Firewall & Packet Filter</h3>
+            <p class="mt-1 text-sm text-slate-600 dark:text-slate-400">Python-based firewall using Scapy to inspect and filter packets by rule sets with logging and monitoring.</p>
+          </a>
+          <div class="mt-3 flex flex-wrap gap-2 text-xs">
+            <span class="rounded bg-slate-100 px-2 py-1 dark:bg-slate-900">Python</span>
+            <span class="rounded bg-slate-100 px-2 py-1 dark:bg-slate-900">Scapy</span>
+            <span class="rounded bg-slate-100 px-2 py-1 dark:bg-slate-900">Networking</span>
+          </div>
+          <div class="mt-3 flex gap-3 text-sm">
+            <a href="<!-- TODO: live demo url -->" class="hover:text-brand-600">Demo</a>
+            <a href="https://github.com/<!-- your-username -->/firewall-project" class="hover:text-brand-600">Code</a>
+          </div>
+        </article>
+
+        <!-- CARD 2 -->
+        <article class="group rounded-2xl border p-4 transition hover:shadow-lg dark:border-slate-800">
+          <a href="<!-- TODO: live demo url -->" aria-label="Network Scanner" class="block">
+            <div class="aspect-video overflow-hidden rounded-lg bg-slate-100 dark:bg-slate-900"></div>
+            <h3 class="mt-4 text-lg font-semibold">Network Scanner & Vulnerability Checker</h3>
+            <p class="mt-1 text-sm text-slate-600 dark:text-slate-400">Tool for scanning open ports and services across networks, with added checks for weak configurations.</p>
+          </a>
+          <div class="mt-3 flex flex-wrap gap-2 text-xs">
+            <span class="rounded bg-slate-100 px-2 py-1 dark:bg-slate-900">Python</span>
+            <span class="rounded bg-slate-100 px-2 py-1 dark:bg-slate-900">Nmap API</span>
+            <span class="rounded bg-slate-100 px-2 py-1 dark:bg-slate-900">Security</span>
+          </div>
+          <div class="mt-3 flex gap-3 text-sm">
+            <a href="<!-- TODO: live demo url -->" class="hover:text-brand-600">Demo</a>
+            <a href="https://github.com/<!-- your-username -->/network-scanner" class="hover:text-brand-600">Code</a>
+          </div>
+        </article>
+
+        <!-- CARD 3 -->
+        <article class="group rounded-2xl border p-4 transition hover:shadow-lg dark:border-slate-800">
+          <a href="<!-- TODO: live demo url -->" aria-label="Intrusion Detection System" class="block">
+            <div class="aspect-video overflow-hidden rounded-lg bg-slate-100 dark:bg-slate-900"></div>
+            <h3 class="mt-4 text-lg font-semibold">Intrusion Detection System</h3>
+            <p class="mt-1 text-sm text-slate-600 dark:text-slate-400">Analyzes packet captures (PCAP files) to detect port scans, brute force attempts, and anomalies.</p>
+          </a>
+          <div class="mt-3 flex flex-wrap gap-2 text-xs">
+            <span class="rounded bg-slate-100 px-2 py-1 dark:bg-slate-900">Python</span>
+            <span class="rounded bg-slate-100 px-2 py-1 dark:bg-slate-900">PCAP</span>
+            <span class="rounded bg-slate-100 px-2 py-1 dark:bg-slate-900">Security</span>
+          </div>
+          <div class="mt-3 flex gap-3 text-sm">
+            <a href="<!-- TODO: live demo url -->" class="hover:text-brand-600">Demo</a>
+            <a href="https://github.com/<!-- your-username -->/intrusion-detection" class="hover:text-brand-600">Code</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="py-16">
+      <div class="grid gap-10 md:grid-cols-[1fr,2fr] md:items-start">
+        <div>
+          <div class="aspect-square w-40 overflow-hidden rounded-2xl border bg-slate-100 dark:border-slate-800 dark:bg-slate-900"></div>
+        </div>
+        <div>
+          <h2 class="text-2xl font-bold">About Me</h2>
+          <p class="mt-3 max-w-prose text-slate-600 dark:text-slate-300">I’m a recent Computer Science graduate from MSU Denver. I enjoy building networking tools and security-focused solutions. My interests include intrusion detection, packet analysis, and secure systems design. I value clear communication, version control discipline, and measurable impact.</p>
+          <ul class="mt-6 grid grid-cols-2 gap-2 text-sm">
+            <li>✔️ Network protocols & firewalls</li>
+            <li>✔️ Intrusion detection & monitoring</li>
+            <li>✔️ Secure authentication</li>
+            <li>✔️ Docker & CI/CD</li>
+            <li>✔️ Cloud (AWS/Azure/GCP)</li>
+            <li>✔️ Penetration testing basics</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="py-16 border-t border-slate-200/60 dark:border-slate-800">
+      <div class="mx-auto max-w-2xl text-center">
+        <h2 class="text-2xl font-bold">Let’s build something together</h2>
+        <p class="mt-2 text-slate-600 dark:text-slate-300">Email me at <a class="text-brand-600 hover:underline" href="mailto:<!-- TODO: your email -->"><!-- TODO: your email --></a> or use the form below.</p>
+        <form class="mt-8 grid gap-3 text-left" name="contact" method="POST" data-netlify="true">
+          <input type="hidden" name="form-name" value="contact" />
+          <label class="block">
+            <span class="mb-1 block text-sm">Name</span>
+            <input class="w-full rounded-lg border px-3 py-2 dark:border-slate-800 dark:bg-slate-900" type="text" name="name" required />
+          </label>
+          <label class="block">
+            <span class="mb-1 block text-sm">Email</span>
+            <input class="w-full rounded-lg border px-3 py-2 dark:border-slate-800 dark:bg-slate-900" type="email" name="email" required />
+          </label>
+          <label class="block">
+            <span class="mb-1 block text-sm">Message</span>
+            <textarea class="w-full rounded-lg border px-3 py-2 dark:border-slate-800 dark:bg-slate-900" rows="5" name="message" required></textarea>
+          </label>
+          <button class="mt-2 inline-flex justify-center rounded-lg bg-brand-600 px-5 py-3 font-medium text-white hover:bg-brand-700" type="submit">Send</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-slate-200/60 py-10 text-center text-sm dark:border-slate-800">
+    <p>© <span id="year"></span> Josh Gordon • Built with HTML + Tailwind</p>
+    <p class="mt-2">
+      <a href="https://github.com/<!-- your-username -->" class="hover:text-brand-600">GitHub</a>
+      · <a href="https://www.linkedin.com/in/<!-- your-handle -->/" class="hover:text-brand-600">LinkedIn</a>
+      · <a href="mailto:<!-- TODO: your email -->" class="hover:text-brand-600">Email</a>
+    </p>
+  </footer>
+
+  <script>
+    const root = document.documentElement;
+    const themeBtn = document.getElementById('themeToggle');
+    const saved = local
