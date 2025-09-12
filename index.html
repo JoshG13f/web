@@ -251,9 +251,9 @@
       if (!el) return;
   
       const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-      const typeDelay  = prefersReduced ? 0 : 50;
-      const eraseDelay = prefersReduced ? 0 : 35;
-      const holdDelay  = prefersReduced ? 0 : 1200;
+      const typeDelay  = prefersReduced ? 0 : 75;
+      const eraseDelay = prefersReduced ? 0 : 50;
+      const holdDelay  = prefersReduced ? 0 : 1500;
   
       let i = 0, j = 0, deleting = false;
       function step() {
