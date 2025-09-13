@@ -116,8 +116,8 @@
       <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         <!-- CARD 1 -->
         <article class="group rounded-2xl border p-4 transition hover:shadow-lg dark:border-slate-800">
-          <a href="<!-- TODO: live demo url -->" aria-label="Firewall Project" class="block">
-            <div class="aspect-video overflow-hidden rounded-lg bg-slate-100 dark:bg-slate-900"><img src="assets/packetFilter.png"></div>
+          <a href="firewall-packet-filter/demo/firewall.mp4" aria-label="Firewall Project" class="block">
+            <div class="aspect-video overflow-hidden rounded-lg bg-slate-100 dark:bg-slate-900"></div>
             <h3 class="mt-4 text-lg font-semibold">Custom Firewall & Packet Filter</h3>
             <p class="mt-1 text-sm text-slate-600 dark:text-slate-400">Python-based firewall using Scapy to inspect and filter packets by rule sets with logging and monitoring.</p>
           </a>
@@ -126,9 +126,9 @@
             <span class="rounded bg-slate-100 px-2 py-1 dark:bg-slate-900">Scapy</span>
             <span class="rounded bg-slate-100 px-2 py-1 dark:bg-slate-900">Networking</span>
           </div>
-          <div class="mt-3 flex gap-3 text-sm">
-            <a href="https://github.com/JoshG13f/firewall-packet-filter/demo/firewall.mp4" class="hover:text-brand-600">Demo</a>
-            <a href="https://github.com/JoshG13f/firewall-packet-filter" class="hover:text-brand-600">Code</a>
+          <div class="mt-3 flex flex wrap gap-3 text-sm">
+            <a href="firewall-packet-filter/demo/firewall.mp4" class="hover:text-brand-600">Demo</a>
+            <a href="firewall-packet-filter" class="hover:text-brand-600">Code</a>
           </div>
         </article>
 
@@ -144,9 +144,9 @@
             <span class="rounded bg-slate-100 px-2 py-1 dark:bg-slate-900">Nmap API</span>
             <span class="rounded bg-slate-100 px-2 py-1 dark:bg-slate-900">Security</span>
           </div>
-          <div class="mt-3 flex gap-3 text-sm">
+          <div class="mt-3 flex flex-wrap gap-3 text-sm">
             <a href="<!-- TODO: live demo url -->" class="hover:text-brand-600">Demo</a>
-            <a href="https://github.com/JoshG13f/network-scanner-vuln-checker" class="hover:text-brand-600">Code</a>
+            <a href="network-scanner-vuln-checker" class="hover:text-brand-600">Code</a>
           </div>
         </article>
 
@@ -162,9 +162,9 @@
             <span class="rounded bg-slate-100 px-2 py-1 dark:bg-slate-900">PCAP</span>
             <span class="rounded bg-slate-100 px-2 py-1 dark:bg-slate-900">Security</span>
           </div>
-          <div class="mt-3 flex gap-3 text-sm">
+          <div class="mt-3 flex flex-wrap gap-3 text-sm">
             <a href="<!-- TODO: live demo url -->" class="hover:text-brand-600">Demo</a>
-            <a href="https://github.com/JoshG13f/vpn-tunnel-prototype" class="hover:text-brand-600">Code</a>
+            <a href="vpn-tunnel-prototype" class="hover:text-brand-600">Code</a>
           </div>
         </article>
       </div>
@@ -221,7 +221,7 @@
   <footer class="border-t border-slate-200/60 py-10 text-center text-sm dark:border-slate-800">
     <p>© <span id="year"></span> Josh Gordon • Built with HTML + Tailwind</p>
     <p class="mt-2">
-      <a href="https://github.com/<!-- your-username -->" class="hover:text-brand-600">GitHub</a>
+      <a href="https://github.com/JoshG13f" class="hover:text-brand-600">GitHub</a>
       · <a href="https://www.linkedin.com/in/<!-- your-handle -->/" class="hover:text-brand-600">LinkedIn</a>
       · <a href="mailto:<!-- TODO: your email -->" class="hover:text-brand-600">Email</a>
     </p>
@@ -251,8 +251,8 @@
       if (!el) return;
   
       const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-      const typeDelay  = prefersReduced ? 0 : 75;
-      const eraseDelay = prefersReduced ? 0 : 50;
+      const typeDelay  = prefersReduced ? 0 : 50;
+      const eraseDelay = prefersReduced ? 0 : 30;
       const holdDelay  = prefersReduced ? 0 : 1500;
   
       let i = 0, j = 0, deleting = false;
