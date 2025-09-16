@@ -115,39 +115,34 @@
 
       <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         <!-- CARD 1 -->
-        <article class="group rounded-2xl border p-4 transition hover:shadow-lg dark:border-slate-800">
-          <div class="aspect-video overflow-hidden rounded-lg bg-slate-100 dark:bg-slate-900">
-            <video
-              class="w-full h-full object-cover"
-              controls
-              preload="none"
-              poster="assets/packetFilter.png"
-              aria-label="Firewall demo video"
-            >
-              <source src="assets/firewall-demo.webm" type="video/webm" />
-              <source src="assets/firewall-demo.mp4"  type="video/mp4" />
-              Sorry—your browser can’t play this video.
-              <a href="assets/firewall-demo.mp4">Watch the MP4</a>.
-            </video>
+        <div class="aspect-video overflow-hidden rounded-lg bg-slate-100 dark:bg-slate-900">
+          <iframe
+          class="w-full h-full"
+          src="https://asciinema.org/a/as1TDeWwDLRyNOvLJX5ecfNu7/iframe?preload=1"
+          loading="lazy"
+          title="Firewall demo (asciinema)"
+          frameborder="0"
+          allowfullscreen
+          ></iframe>
           </div>
-        
+          
+          
           <h3 class="mt-4 text-lg font-semibold">Custom Firewall & Packet Filter</h3>
-          <p class="mt-1 text-sm text-slate-600 dark:text-slate-400">
-            Python-based firewall using Scapy to inspect and filter packets by rule sets with logging and monitoring.
-          </p>
-        
+          <p class="mt-1 text-sm text-slate-600 dark:text-slate-400">Python-based firewall using Scapy to inspect and filter packets by rule sets with logging and monitoring.</p>
+          
+          
           <div class="mt-3 flex flex-wrap gap-2 text-xs" aria-label="Tech used">
-            <span class="rounded bg-slate-100 px-2 py-1 dark:bg-slate-900">Python</span>
-            <span class="rounded bg-slate-100 px-2 py-1 dark:bg-slate-900">Scapy</span>
-            <span class="rounded bg-slate-100 px-2 py-1 dark:bg-slate-900">Networking</span>
+          <span class="rounded bg-slate-100 px-2 py-1 dark:bg-slate-900">Python</span>
+          <span class="rounded bg-slate-100 px-2 py-1 dark:bg-slate-900">Scapy</span>
+          <span class="rounded bg-slate-100 px-2 py-1 dark:bg-slate-900">Networking</span>
           </div>
-        
+          
+          
           <div class="mt-3 flex flex-wrap gap-3 text-sm">
-            <!-- Direct link for full-screen playback or downloading -->
-            <a href="assets/firewall-demo.mp4" class="hover:text-brand-600">Demo</a>
-            <a href="https://github.com/JoshG13f/firewall-packet-filter" class="hover:text-brand-600">Code</a>
+          <a href="https://asciinema.org/a/as1TDeWwDLRyNOvLJX5ecfNu7" class="hover:text-brand-600">Demo</a>
+          <a href="https://github.com/JoshG13f/firewall-packet-filter" class="hover:text-brand-600">Code</a>
           </div>
-        </article>
+</article>
 
 
         <!-- CARD 2 -->
