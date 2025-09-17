@@ -116,29 +116,30 @@
       <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         <!-- CARD 1 -->
         <article class="group rounded-2xl border p-4 transition hover:shadow-lg dark:border-slate-800">
-          <!-- media: iframes -->
+          <!-- media: responsive, no extra gray gap -->
           <div class="rounded-lg overflow-hidden border bg-slate-100 dark:bg-slate-900">
-            <div class="h-50 sm:h-72 lg:h-80">
-              <!-- Light theme -->
-              <iframe
-                class="w-full h-full block dark:hidden"
-                src="https://asciinema.org/a/as1TDeWwDLRyNOvLJX5ecfNu7/iframe?preload=1&theme=solarized-light&cols=100&rows=26"
-                loading="lazy"
-                title="Firewall demo (asciinema - light)"
-                frameborder="0"
-                allowfullscreen
-              ></iframe>
-        
-              <!-- Dark theme -->
-              <iframe
-                class="w-full h-full hidden dark:block"
-                src="https://asciinema.org/a/as1TDeWwDLRyNOvLJX5ecfNu7/iframe?preload=1&theme=asciinema&cols=100&rows=26"
-                loading="lazy"
-                title="Firewall demo (asciinema - dark)"
-                frameborder="0"
-                allowfullscreen
-              ></iframe>
-            </div>
+            <!-- Light theme -->
+            <iframe
+              class="w-full block dark:hidden"
+              style="aspect-ratio: 16 / 9; height: auto;"
+              src="https://asciinema.org/a/as1TDeWwDLRyNOvLJX5ecfNu7/iframe?preload=1&theme=solarized-light&cols=100&rows=26"
+              loading="lazy"
+              title="Firewall demo (asciinema - light)"
+              frameborder="0"
+              allowfullscreen
+            ></iframe>
+          
+            <!-- Dark theme -->
+            <iframe
+              class="w-full hidden dark:block"
+              style="aspect-ratio: 16 / 9; height: auto;"
+              src="https://asciinema.org/a/as1TDeWwDLRyNOvLJX5ecfNu7/iframe?preload=1&theme=asciinema&cols=100&rows=26"
+              loading="lazy"
+              title="Firewall demo (asciinema - dark)"
+              frameborder="0"
+              allowfullscreen
+            ></iframe>
+           </div>
           </div>
         
           <h3 class="mt-4 text-lg font-semibold">Custom Firewall & Packet Filter</h3>
