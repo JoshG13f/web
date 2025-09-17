@@ -91,7 +91,11 @@
         <div>
           <p class="text-sm uppercase tracking-widest text-brand-600 font-semibold">MSU Denver Graduate • Available for full-time roles</p>
           <h1 class="mt-3 text-4xl font-bold leading-tight sm:text-5xl">Hi, I’m <span class="text-brand-600">Josh Gordon</span> 👋</h1>
-          <p class="mt-2 typing-caret font-mono" id="typedRole" aria-live="polite">Computer Science Graduate</p>
+          <p class="mt-2 typing-caret font-mono" aria-live="polite">
+            <span id="typedRole" class="inline-block whitespace-nowrap min-w-[26ch]">
+              Computer Science Graduate
+            </span>
+          </p>
           <p class="mt-4 max-w-prose text-slate-600 dark:text-slate-300">I specialize in networking and cybersecurity. My projects showcase work with firewalls, intrusion detection, secure data transfer, and vulnerability analysis.</p>
           <div class="mt-6 flex flex-wrap gap-3">
             <a href="#projects" class="inline-flex items-center rounded-lg bg-brand-600 px-5 py-3 font-medium text-white hover:bg-brand-700">View Projects</a>
@@ -310,40 +314,64 @@
       });
     }
   });
-
-  // ---- Typewriter (with pause + reduced-motion support) ----
-  (() => {
-    const roles = [
-      'Computer Science Graduate',
-      'Networking • Firewalls • Linux',
-      'Blue Team • IDS • PCAP',
-      'Python • AWS • Automation'
-    ];
-    const el = document.getElementById('typedRole');
-    if (!el) return;
-
-    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    const typeDelay  = prefersReduced ? 0 : 50;
-    const eraseDelay = prefersReduced ? 0 : 30;
-    const holdDelay  = prefersReduced ? 0 : 1500;
-
-    let i = 0, j = 0, deleting = false;
-    function step() {
-      const text = roles[i % roles.length];
-      if (!deleting) {
-        j = Math.min(j + 1, text.length);
-        el.textContent = text.slice(0, j);
-        if (j === text.length) { deleting = true; setTimeout(step, holdDelay); return; }
-        setTimeout(step, typeDelay);
-      } else {
-        j = Math.max(j - 1, 0);
-        el.textContent = text.slice(0, j);
-        if (j === 0) { deleting = false; i++; }
-        setTimeout(step, eraseDelay);
+  
+    // ---- Typewriter (mobile-friendly speeds + no layout jank) ----
+    (() => {
+      const roles = [
+        'Computer Science Graduate',
+        'Networking • Firewalls • Linux',
+        'Blue Team • IDS • PCAP',
+        'Python • AWS • Automation'
+      ];
+      const el = document.getElementById('typedRole');
+      if (!el) return;
+    
+      const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      const isPhone = /iPhone|Android/i.test(navigator.userAgent);
+    
+      // Tunable speeds (ms)
+      const TYPE_MS   = prefersReduced ? 0 : (isPhone ? 90 : 55);
+      const ERASE_MS  = prefersReduced ? 0 : (isPhone ? 60 : 35);
+      const HOLD_MS   = prefersReduced ? 0 : (isPhone ? 1600 : 1200);
+      const START_MS  = prefersReduced ? 0 : 150;   // tiny delay before starting
+    
+      let i = 0, j = 0, deleting = false;
+    
+      function frame(delay) {
+        setTimeout(step, delay);
       }
-    }
-    requestAnimationFrame(step);
-  })();
+    
+      function step() {
+        const text = roles[i % roles.length];
+    
+        if (!deleting) {
+          j = Math.min(j + 1, text.length);
+          el.textContent = text.slice(0, j) || ' ';   // keep at least one char to avoid width collapse
+          if (j === text.length) {
+            deleting = true;
+            return frame(HOLD_MS);
+          }
+          return frame(TYPE_MS);
+        } else {
+          j = Math.max(j - 1, 0);
+          el.textContent = text.slice(0, j) || ' ';
+          if (j === 0) {
+            deleting = false;
+            i++;
+            return frame(250); // small pause before next word
+          }
+          return frame(ERASE_MS);
+        }
+      }
+    
+      // Respect reduced-motion: set a static string
+      if (prefersReduced) {
+        el.textContent = roles[0];
+        return;
+      }
+    
+      frame(START_MS);
+    })();
 
   // ---- Year ----
   document.addEventListener('DOMContentLoaded', () => {
