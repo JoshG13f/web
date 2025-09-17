@@ -117,32 +117,23 @@
       </div>
 
       <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-        <!-- CARD 1 -->
+        <!-- CARD 1 – Firewall -->
         <article class="group rounded-2xl border p-4 transition hover:shadow-lg dark:border-slate-800">
-          <!-- media: responsive, no extra gray gap -->
-          <div class="rounded-lg overflow-hidden border bg-slate-100 dark:bg-slate-900">
-            <!-- Light theme -->
-            <iframe
-              class="w-full block dark:hidden"
-              style="aspect-ratio: 16 / 9; height: auto;"
-              src="https://asciinema.org/a/as1TDeWwDLRyNOvLJX5ecfNu7/iframe?preload=1&theme=solarized-light&cols=100&rows=26"
-              loading="lazy"
-              title="Firewall demo (asciinema - light)"
-              frameborder="0"
-              allowfullscreen
-            ></iframe>
-          
-            <!-- Dark theme -->
-            <iframe
-              class="w-full hidden dark:block"
-              style="aspect-ratio: 16 / 9; height: auto;"
-              src="https://asciinema.org/a/as1TDeWwDLRyNOvLJX5ecfNu7/iframe?preload=1&theme=asciinema&cols=100&rows=26"
-              loading="lazy"
-              title="Firewall demo (asciinema - dark)"
-              frameborder="0"
-              allowfullscreen
-            ></iframe>
-          </div>
+          <!-- Preview that opens the Asciinema page in a new tab -->
+          <a href="https://asciinema.org/a/as1TDeWwDLRyNOvLJX5ecfNu7" target="_blank" rel="noopener"
+             class="block rounded-lg overflow-hidden border bg-slate-100 dark:bg-slate-900 group">
+            <div class="relative" style="aspect-ratio: 16 / 9;">
+              <!-- Poster image (optional, replace with your own) -->
+              <img src="assets/firewall-hero.webp" alt="Firewall demo preview"
+                   class="absolute inset-0 h-full w-full object-cover opacity-90 group-hover:opacity-100 transition" />
+              <!-- Play badge -->
+              <div class="absolute inset-0 grid place-items-center">
+                <span class="inline-flex items-center gap-2 rounded-full bg-black/60 px-3 py-1.5 text-white text-sm">
+                  ▶ Open live demo
+                </span>
+              </div>
+            </div>
+          </a>
         
           <h3 class="mt-4 text-lg font-semibold">Custom Firewall & Packet Filter</h3>
           <p class="mt-1 text-sm text-slate-600 dark:text-slate-400">
@@ -160,35 +151,21 @@
             <a href="https://github.com/JoshG13f/firewall-packet-filter" class="hover:text-brand-600">Code</a>
           </div>
         </article>
-
         
-        <!-- CARD 2 -->
+        <!-- CARD 2 – Network Scanner -->
         <article class="group rounded-2xl border p-4 transition hover:shadow-lg dark:border-slate-800">
-          <!-- media (JS embed) -->
-          <div class="rounded-lg overflow-hidden border bg-slate-100 dark:bg-slate-900">
-            <!-- Light -->
-            <script
-              id="asciicast-YOUR_SCANNER_ID-light"
-              src="https://asciinema.org/a/YOUR_SCANNER_ID.js"
-              async
-              data-preload="true"
-              data-theme="solarized-light"
-              data-cols="100"
-              data-rows="26"
-              class="block dark:hidden"
-            ></script>
-            <!-- Dark -->
-            <script
-              id="asciicast-YOUR_SCANNER_ID-dark"
-              src="https://asciinema.org/a/YOUR_SCANNER_ID.js"
-              async
-              data-preload="true"
-              data-theme="asciinema"
-              data-cols="100"
-              data-rows="26"
-              class="hidden dark:block"
-            ></script>
-          </div>
+          <a href="https://asciinema.org/a/YOUR_SCANNER_ID" target="_blank" rel="noopener"
+             class="block rounded-lg overflow-hidden border bg-slate-100 dark:bg-slate-900 group">
+            <div class="relative" style="aspect-ratio: 16 / 9;">
+              <img src="assets/scanner-hero.webp" alt="Network scanner demo preview"
+                   class="absolute inset-0 h-full w-full object-cover opacity-90 group-hover:opacity-100 transition" />
+              <div class="absolute inset-0 grid place-items-center">
+                <span class="inline-flex items-center gap-2 rounded-full bg-black/60 px-3 py-1.5 text-white text-sm">
+                  ▶ Open live demo
+                </span>
+              </div>
+            </div>
+          </a>
         
           <h3 class="mt-4 text-lg font-semibold">Network Scanner & Vulnerability Checker</h3>
           <p class="mt-1 text-sm text-slate-600 dark:text-slate-400">
@@ -206,34 +183,21 @@
             <a href="https://github.com/JoshG13f/network-scanner-vuln-checker" class="hover:text-brand-600">Code</a>
           </div>
         </article>
-
-        <!-- CARD 3 -->
+        
+        <!-- CARD 3 – VPN Tunnel -->
         <article class="group rounded-2xl border p-4 transition hover:shadow-lg dark:border-slate-800">
-          <!-- media (JS embed) -->
-          <div class="rounded-lg overflow-hidden border bg-slate-100 dark:bg-slate-900">
-            <!-- Light -->
-            <script
-              id="asciicast-YOUR_VPN_ID-light"
-              src="https://asciinema.org/a/YOUR_VPN_ID.js"
-              async
-              data-preload="true"
-              data-theme="solarized-light"
-              data-cols="100"
-              data-rows="26"
-              class="block dark:hidden"
-            ></script>
-            <!-- Dark -->
-            <script
-              id="asciicast-YOUR_VPN_ID-dark"
-              src="https://asciinema.org/a/YOUR_VPN_ID.js"
-              async
-              data-preload="true"
-              data-theme="asciinema"
-              data-cols="100"
-              data-rows="26"
-              class="hidden dark:block"
-            ></script>
-          </div>
+          <a href="https://asciinema.org/a/YOUR_VPN_ID" target="_blank" rel="noopener"
+             class="block rounded-lg overflow-hidden border bg-slate-100 dark:bg-slate-900 group">
+            <div class="relative" style="aspect-ratio: 16 / 9;">
+              <img src="assets/vpn-hero.webp" alt="VPN tunnel demo preview"
+                   class="absolute inset-0 h-full w-full object-cover opacity-90 group-hover:opacity-100 transition" />
+              <div class="absolute inset-0 grid place-items-center">
+                <span class="inline-flex items-center gap-2 rounded-full bg-black/60 px-3 py-1.5 text-white text-sm">
+                  ▶ Open live demo
+                </span>
+              </div>
+            </div>
+          </a>
         
           <h3 class="mt-4 text-lg font-semibold">VPN Tunnel Prototype</h3>
           <p class="mt-1 text-sm text-slate-600 dark:text-slate-400">
@@ -251,6 +215,7 @@
             <a href="https://github.com/JoshG13f/vpn-tunnel-prototype" class="hover:text-brand-600">Code</a>
           </div>
         </article>
+
       </div>
     </section>
 
