@@ -24,19 +24,22 @@
   <!-- Tailwind CSS (CDN). For production, swap to a compiled stylesheet. -->
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            brand: {
-              50: '#eef2ff', 100: '#e0e7ff', 200: '#c7d2fe', 300: '#a5b4fc', 400: '#818cf8', 500: '#6366f1', 600: '#4f46e5', 700: '#4338ca', 800: '#3730a3', 900: '#312e81'
-            }
+  tailwind.config = {
+    darkMode: 'class',
+    theme: {
+      extend: {
+        colors: {
+          brand: {
+            50: '#eef2ff', 100: '#e0e7ff', 200: '#c7d2fe', 300: '#a5b4fc',
+            400: '#818cf8', 500: '#6366f1', 600: '#4f46e5', 700: '#4338ca',
+            800: '#3730a3', 900: '#312e81'
           }
         }
-      },
-      darkMode: ['class', '[data-theme="dark"]']
+      }
     }
-  </script>
+  }
+</script>
+
 <!-- Theme pre-init: apply saved or system theme before paint -->
 <script>
   (function () {
@@ -51,7 +54,7 @@
  
 </head>
 
-<body class="bg-white text-slate-800 antialiased dark:bg-slate-950 dark:text-slate-100" data-theme="light">
+<body class="bg-white text-slate-800 antialiased dark:bg-slate-950 dark:text-slate-100">
   <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 bg-brand-600 text-white px-3 py-2 rounded">Skip to content</a>
 
   <!-- Header / Nav -->
