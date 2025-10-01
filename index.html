@@ -256,29 +256,98 @@
       </div>
     </section>
 
-    <!-- Contact -->
-    <section id="contact" class="py-16 border-t border-slate-200/60 dark:border-slate-800">
-      <div class="mx-auto max-w-2xl text-center">
-        <h2 class="text-2xl font-bold">Let’s build something together</h2>
-        <p class="mt-2 text-slate-600 dark:text-slate-300">Email me at <a class="text-brand-600 hover:underline" href="mailto:josh.gordon@gmail.com">josh.gordon@gmail.com</a> or use the form below.</p>
-        <form class="mt-8 grid gap-3 text-left" name="contact" method="POST" data-netlify="true">
-          <input type="hidden" name="form-name" value="contact" />
-          <label class="block">
-            <span class="mb-1 block text-sm">Name</span>
-            <input class="w-full rounded-lg border px-3 py-2 dark:border-slate-800 dark:bg-slate-900" type="text" name="name" required />
-          </label>
-          <label class="block">
-            <span class="mb-1 block text-sm">Email</span>
-            <input class="w-full rounded-lg border px-3 py-2 dark:border-slate-800 dark:bg-slate-900" type="email" name="email" required />
-          </label>
-          <label class="block">
-            <span class="mb-1 block text-sm">Message</span>
-            <textarea class="w-full rounded-lg border px-3 py-2 dark:border-slate-800 dark:bg-slate-900" rows="5" name="message" required></textarea>
-          </label>
-          <button class="mt-2 inline-flex justify-center rounded-lg bg-brand-600 px-5 py-3 font-medium text-white hover:bg-brand-700" type="submit">Send</button>
-        </form>
-      </div>
-    </section>
+  <!-- Contact -->
+<section id="contact" class="py-16 border-t border-slate-200/60 dark:border-slate-800">
+  <div class="mx-auto max-w-2xl text-center">
+    <h2 class="text-2xl font-bold">Let’s build something together</h2>
+    <p class="mt-2 text-slate-600 dark:text-slate-300">
+      Email me at
+      <a class="text-brand-600 hover:underline" href="mailto:josh.gordon@gmail.com">josh.gordon@gmail.com</a>
+      or use the form below.
+    </p>
+
+    <!-- Formspree-powered form -->
+    <form id="contactForm"
+          class="mt-8 grid gap-3 text-left"
+          action="https://formspree.io/f/xblzyley"
+          method="POST">
+      <!-- spam honeypot -->
+      <input type="text" name="_gotcha" class="hidden" tabindex="-1" autocomplete="off" />
+      <!-- optional subject line -->
+      <input type="hidden" name="_subject" value="Portfolio contact form submission" />
+
+      <label class="block">
+        <span class="mb-1 block text-sm">Name</span>
+        <input class="w-full rounded-lg border px-3 py-2 dark:border-slate-800 dark:bg-slate-900"
+               type="text" name="name" autocomplete="name" required />
+      </label>
+
+      <label class="block">
+        <span class="mb-1 block text-sm">Email</span>
+        <input class="w-full rounded-lg border px-3 py-2 dark:border-slate-800 dark:bg-slate-900"
+               type="email" name="email" autocomplete="email" required />
+      </label>
+
+      <label class="block">
+        <span class="mb-1 block text-sm">Message</span>
+        <textarea class="w-full rounded-lg border px-3 py-2 dark:border-slate-800 dark:bg-slate-900"
+                  rows="5" name="message" required></textarea>
+      </label>
+
+      <button class="mt-2 inline-flex justify-center rounded-lg bg-brand-600 px-5 py-3 font-medium text-white hover:bg-brand-700"
+              type="submit" id="contactSubmit">
+        Send
+      </button>
+
+      <!-- Inline status messages -->
+      <p id="formSuccess" class="hidden mt-3 text-sm text-green-600" aria-live="polite">
+        Thanks! Your message was sent.
+      </p>
+      <p id="formError" class="hidden mt-3 text-sm text-red-600" aria-live="polite">
+        Oops—something went wrong. Please try again or email me directly.
+      </p>
+    </form>
+  </div>
+</section>
+
+<script>
+  // Ajax submit to Formspree: stay on the page and show status
+  (function () {
+    const form = document.getElementById('contactForm');
+    if (!form) return;
+    const ok = document.getElementById('formSuccess');
+    const err = document.getElementById('formError');
+    const btn = document.getElementById('contactSubmit');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      ok.classList.add('hidden');
+      err.classList.add('hidden');
+
+      // disable button while sending
+      btn.disabled = true;
+
+      try {
+        const res = await fetch(form.action, {
+          method: 'POST',
+          headers: { 'Accept': 'application/json' },
+          body: new FormData(form)
+        });
+        if (res.ok) {
+          form.reset();
+          ok.classList.remove('hidden');
+        } else {
+          err.classList.remove('hidden');
+        }
+      } catch (_) {
+        err.classList.remove('hidden');
+      } finally {
+        btn.disabled = false;
+      }
+    });
+  })();
+</script>
+
   </main>
 
   <footer class="border-t border-slate-200/60 py-10 text-center text-sm dark:border-slate-800">
